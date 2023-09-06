@@ -5,15 +5,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     fetchFilesButton.addEventListener("click", () => {
         // Erstat 'YOUR_ACCESS_TOKEN' med din Dropbox Access Token
-        const accessToken = MY_ACCESS_TOKEN;
+        const accessToken = window.MY_ACCESS_TOKEN;
 
-        // Erstatt 'YOUR_FOLDER_PATH' med stien til din "TestMappe" i Dropbox
+        // Erstat 'YOUR_FOLDER_PATH' med stien til din "TestMappe" i Dropbox
         const folderPath = '/nskDB/';
 
         fetch(`https://api.dropboxapi.com/2/files/list_folder`, {
             method: 'POST',
             headers: {
-                'Authorization': `Bearer ${accessToken}`,
+                'Authorization': '${accessToken}',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
